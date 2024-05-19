@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Compile the C++ program
+cd ~/ProfProg/Class/practice2.1 || exit
 clang++ -std=c++23 -Wall -Wextra -Wpedantic -Werror task3.cpp -o task3
+
+# Run Test Cases
+echo "Running Test Cases:"
 
 # Test Case 1: First Run with a New Name
 echo "Test Case 1: First Run with a New Name"
