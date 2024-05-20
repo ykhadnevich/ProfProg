@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+// Please check the comments from class work:
+// we also can use java tools to handle and filter lists
+// also encapsulation and some checks should be applied.
 public class main {
     // Function to find the largest negative value from a list of numbers
     public static double findLargestNegative(double[] numbers) {

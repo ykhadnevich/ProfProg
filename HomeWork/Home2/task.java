@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+// We need a separate class to encapsulate work with our stat database
+// This class should be responsible for handling all the data and its storage format.
 public class task {
     private static final String DATABASE_FILE = "user_stats.txt";
     private static final String SECRET_WORD = "bread";
