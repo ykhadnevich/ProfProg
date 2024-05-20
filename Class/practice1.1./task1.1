@@ -1,0 +1,49 @@
+1. Let's install clang-18 toolchain to use c++23 standard.
+
+Windows/MacOS/Ubuntu, Prefered installation - Multipass with Ubuntu-24.04:
+
+multipass launch --name noble --disk 15GB
+sudo apt update -y
+sudo apt install -y clang-18 g++-14
+sudo ln -s /usr/bin/clang++-18 /usr/bin/clang++
+
+Windows(alternative):
+https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.5/LLVM-18.1.5-win64.exe
+Choose Add LLVM to the system PATH
+Note:  you need to have Windows c++ build tools installed.
+
+MacOS(alternative):
+brew install llvm@18
+and make it default(see installation output)
+You should add -L/usr/local/opt/llvm/lib/c++ option during compiler issues.
+
+
+Linux(alternative):
+wget https://apt.llvm.org/llvm.sh
+chmod u+x llvm.sh
+sudo ./llvm.sh 18
+
+2. Create directory practice1.1. switch to it and create file main.cpp with the following content:
+
+#include <print>
+
+int main() {
+   std::println("Hello World!");
+}
+
+3. Compile it with the following command:
+MacOS
+clang++ -Wall -std=c++23 main.cpp -o main -L/usr/local/opt/llvm/lib/c++
+./main
+
+Windows
+clang++.exe -std=c++23 -Wall main.cpp -o main.exe
+./main.exe
+
+Linux
+clang++ -std=c++23 -Wall main.cpp -o main
+./main
+
+4. Let's write a few requirements(in a form "User shall be able to ...", "Program should be able to ...", etc)  for the following user stories:
+    a. As a cool programmer guy I want to have an ability to find the biggest negative value from the provided list of numbers. It will allow me to make my manual calculation faster.
+    b. As a cool mathematician I want to be able to get roots of the quadratic equation ax^2 + bx + c. It will allow me to avoid hard calculations related to determinant.
