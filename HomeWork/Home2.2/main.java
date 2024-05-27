@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+// the most concerns are the same as for C++ - we can intrduce piixel class and Image class and rework code to have  better isolatiion and encapsulation
 public class main{
 
     // Function to process the input file and generate the output file
