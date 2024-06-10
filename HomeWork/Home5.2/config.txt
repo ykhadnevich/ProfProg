@@ -1,0 +1,3 @@
+hello hi
+welcome bye
+goodbye see you later
