@@ -1,0 +1,7 @@
+Cheese 1.5
+Tomato 0.5
+Pepperoni 2.0
+Ham 2.5
+Pineapple 1.8
+Mushrooms 1.0
+Olives 1.2
