@@ -27,6 +27,8 @@ void PizzaBuilder::addIngredient(const std::string& ingredient) {
     }
 }
 
-Pizza PizzaBuilder::getPizza() const {
-    return pizza;
+[[nodiscard]] Pizza PizzaBuilder::getPizza() {
+    Pizza tempPizza = pizza; // Create a copy of the pizza
+    pizza = Pizza(); // Reset the pizza object to its default state
+    return tempPizza;
 }

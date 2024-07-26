@@ -1,0 +1,60 @@
+BlueMessage: 80.4697, 21.4283
+BlueMessage: 0.804241, 33.0462
+BlueMessage: 50.1091, 97.6256
+OrangeMessage: First, Second, 34, 32.336
+BlueMessage: 3.35842, 32.0543
+GreenMessage: Sample Message, 6
+OrangeMessage: First, Second, 95, 53.9827
+OrangeMessage: First, Second, 75, 37.7094
+OrangeMessage: First, Second, 56, 80.2643
+OrangeMessage: First, Second, 58, 72.7694
+GreenMessage: Sample Message, 10
+OrangeMessage: First, Second, 34, 52.3801
+OrangeMessage: First, Second, 43, 9.27788
+BlueMessage: 55.2615, 36.0833
+BlueMessage: 1.37095, 93.5454
+GreenMessage: Sample Message, 8
+GreenMessage: Sample Message, 10
+GreenMessage: Sample Message, 1
+BlueMessage: 5.40243, 71.1046
+OrangeMessage: First, Second, 92, 47.6085
+OrangeMessage: First, Second, 25, 77.4116
+OrangeMessage: First, Second, 71, 17.495
+BlueMessage: 87.1703, 88.128
+GreenMessage: Sample Message, 2
+OrangeMessage: First, Second, 33, 66.9606
+BlueMessage: 75.8751, 63.5147
+OrangeMessage: First, Second, 42, 39.7673
+OrangeMessage: First, Second, 28, 27.0805
+OrangeMessage: First, Second, 11, 12.6945
+OrangeMessage: First, Second, 37, 84.9578
+BlueMessage: 80.0408, 84.9508
+OrangeMessage: First, Second, 97, 7.77277
+GreenMessage: Sample Message, 1
+BlueMessage: 94.1467, 78.9947
+GreenMessage: Sample Message, 8
+BlueMessage: 61.3558, 31.7027
+BlueMessage: 52.5485, 13.6381
+OrangeMessage: First, Second, 72, 0.0405796
+GreenMessage: Sample Message, 8
+OrangeMessage: First, Second, 51, 96.8355
+GreenMessage: Sample Message, 4
+GreenMessage: Sample Message, 2
+BlueMessage: 78.9468, 39.0627
+BlueMessage: 59.3106, 41.432
+OrangeMessage: First, Second, 15, 98.0415
+GreenMessage: Sample Message, 10
+BlueMessage: 83.6668, 19.6239
+GreenMessage: Sample Message, 2
+BlueMessage: 80.8883, 19.3252
+BlueMessage: 77.7869, 22.0363
+GreenMessage: Sample Message, 2
+GreenMessage: Sample Message, 9
+OrangeMessage: First, Second, 68, 4.21687
+BlueMessage: 87.6891, 97.1154
+GreenMessage: Sample Message, 10
+BlueMessage: 52.1372, 25.9588
+OrangeMessage: First, Second, 68, 20.0999
+BlueMessage: 1.91968, 66.6304
+BlueMessage: 29.4326, 37.3059
+BlueMessage: 33.497, 52.0353
