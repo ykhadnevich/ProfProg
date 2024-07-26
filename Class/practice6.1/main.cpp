@@ -1,59 +1,76 @@
 #include <iostream>
 #include <thread>
-#include <cstdlib>
-#include <ctime>
 #include <chrono>
-#include "Messages.h"
+#include <random>
+#include <atomic> // Add this line
 #include "MessageDispatcher.h"
 #include "Logger.h"
 
-void generateMessages(MessageDispatcher& dispatcher) {
-    std::srand(std::time(0));
+// Random number generator setup
+std::random_device rd;
+std::mt19937 gen(rd());
+std::uniform_int_distribution<> messageTypeDist(0, 2);
+std::uniform_int_distribution<> intDist(0, 100);
+std::uniform_real_distribution<> doubleDist(0.0, 100.0);
+std::uniform_int_distribution<> counterDist(1, 10);
 
-    while (true) {
-        int type = std::rand() % 3;
-        switch (type) {
+std::atomic<bool> stopGeneration(false);
+
+void generateMessages(MessageDispatcher& dispatcher) {
+    while (!stopGeneration.load()) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Simulate work
+        
+        int messageType = messageTypeDist(gen);
+        switch (messageType) {
             case 0: {
-                GreenMessage msg("GreenMessage", std::rand() % 100);
-                dispatcher.publish(msg);
+                // GreenMessage
+                GreenMessage greenMessage("Sample Message", counterDist(gen));
+                dispatcher.publish(greenMessage);
                 break;
             }
             case 1: {
-                BlueMessage msg(static_cast<double>(std::rand()) / RAND_MAX, static_cast<double>(std::rand()) / RAND_MAX);
-                dispatcher.publish(msg);
+                // BlueMessage
+                BlueMessage blueMessage(doubleDist(gen), doubleDist(gen));
+                dispatcher.publish(blueMessage);
                 break;
             }
             case 2: {
-                OrangeMessage msg("OrangeMessage1", "OrangeMessage2", std::rand() % 100, static_cast<double>(std::rand()) / RAND_MAX);
-                dispatcher.publish(msg);
+                // OrangeMessage
+                OrangeMessage orangeMessage("First", "Second", intDist(gen), doubleDist(gen));
+                dispatcher.publish(orangeMessage);
                 break;
             }
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
 
 int main() {
     MessageDispatcher dispatcher;
-    Logger logger("messages.log");
 
-    dispatcher.subscribeToGreen([&logger](const GreenMessage& msg) {
-        logger.log(msg);
+    Logger logger("log.txt");
+
+    // Subscribe to messages
+    dispatcher.subscribeToGreen([&logger](const GreenMessage& message) {
+        logger.log(message);
     });
 
-    dispatcher.subscribeToBlue([&logger](const BlueMessage& msg) {
-        logger.log(msg);
+    dispatcher.subscribeToBlue([&logger](const BlueMessage& message) {
+        logger.log(message);
     });
 
-    dispatcher.subscribeToOrange([&logger](const OrangeMessage& msg) {
-        logger.log(msg);
+    dispatcher.subscribeToOrange([&logger](const OrangeMessage& message) {
+        logger.log(message);
     });
 
-    std::thread t1(generateMessages, std::ref(dispatcher));
-    std::thread t2(generateMessages, std::ref(dispatcher));
+    // Start message generation in a separate thread
+    std::thread generatorThread(generateMessages, std::ref(dispatcher));
 
-    t1.join();
-    t2.join();
-    
+    // Run for a while
+    std::this_thread::sleep_for(std::chrono::seconds(10));
+
+    // Signal generator thread to stop and wait for it to finish
+    stopGeneration.store(true);
+    generatorThread.join();
+
     return 0;
 }
